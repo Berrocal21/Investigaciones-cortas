@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación 3: Accesibilidad Web y WCAG | ISW-512</title>
+    
+    <meta property="og:title" content="Principios de Accesibilidad Web (WCAG)">
+    <meta property="og:description" content="Análisis de los 4 principios WCAG y su aplicación ética y legal.">
+    
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header role="banner">
+        <div class="header-content container">
+            <a href="index.html" aria-label="Volver al Inicio - Universidad Técnica Nacional">
+                 <img src="/Imagenes/image.png" alt="Logo de la Universidad Técnica Nacional" class="logo-site">
+            </a>
+            <nav role="navigation" aria-label="Navegación Principal">
+                <ul>
+                    <li><a href="/index.html"> Inicio</a></li> 
+                    <li><a href="/seo y rendimiento.html">1. SEO y Rendimiento</a></li>
+                    <li><a href="/usabilidad web y dsu.html">2. Usabilidad y DCU</a></li>
+                    <li><a href="/accesibilidad web.html" aria-current="page">3. Accesibilidad Web</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="container">
+        <article>
+            <h1>Investigación 3: Accesibilidad Web</h1>
+
+            <section id="que-es-accesibilidad" class="content-panel">
+                <h2>1. ¿Qué es la Accesibilidad Web?</h2>
+                <p>La <strong>Accesibilidad Web</strong> significa que los sitios web, herramientas y tecnologías están diseñados y desarrollados de tal manera que las personas con discapacidades pueden usarlos. Abarca todas las discapacidades que afectan al acceso a la Web, incluyendo las auditivas, cognitivas, neurológicas, físicas, del habla y visuales.</p>
+                
+                <h3>Importancia de la Accesibilidad</h3>
+                
+                <h4>Justificación Ética</h4>
+                <p>Desde un punto de vista ético, la accesibilidad es una cuestión de <strong>derechos humanos e inclusión social</strong>. La Convención de la ONU sobre los Derechos de las Personas con Discapacidad reconoce el acceso a la información, incluyendo la web, como un derecho humano. Excluir a las personas con discapacidad de este acceso es una forma de discriminación que limita su participación en la sociedad.</p>
+
+                <h4>Justificación Legal</h4>
+                <p>A nivel mundial, la accesibilidad web es cada vez más un <strong>requisito legal</strong>. Legislaciones como la Ley de Estadounidenses con Discapacidades (ADA) o el Acta Europea de Accesibilidad (EN 301 549) exigen que los sitios web, especialmente los de entidades públicas, sean accesibles. El incumplimiento puede resultar en demandas costosas y daño a la reputación.</p>
+
+                <h4>Mejora de la Calidad del Código</h4>
+                <p>La implementación de la accesibilidad conduce a un código de <strong>mayor calidad, más robusto y mantenible</strong>. Fomenta el uso de HTML semántico (lo que mejora el SEO), promueve la separación clara entre contenido (HTML), presentación (CSS) y comportamiento (JavaScript), y crea sitios más robustos que funcionan mejor en una gama más amplia de dispositivos y navegadores.</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/fcXL0tfcgqc" title="YouTube video player: ¿Qué es la Accesibilidad Web?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section id="principios-wcag" class="content-panel">
+                <h2>2. Principios de las WCAG (Pautas de Accesibilidad al Contenido en la Web)</h2>
+                <p>Las WCAG son el estándar internacional para la accesibilidad web y se basan en cuatro principios fundamentales: perceptible, operable, comprensible y robusto (conocido por el acrónimo <strong>POUR</strong>).</p>
+                
+
+                <div class="principios-grid">
+                    <article class="principio">
+                        <h3>1. Perceptible</h3>
+                        <p>La información y los componentes de la interfaz de usuario deben ser presentables a los usuarios de formas que puedan percibir. Esto significa que los usuarios deben poder percibir la información; no puede ser invisible a todos sus sentidos.</p>
+                        <h4>Ejemplo de Código (Texto Alternativo):</h4>
+                        <pre><code>&lt;!-- El atributo 'alt' permite que los lectores de pantalla describan la imagen --&gt;
+&lt;img src="images/grafico.png" alt="Gráfico de barras que muestra un aumento del 30% en las ventas."&gt;
+</code></pre>
+                    </article>
+
+                    <article class="principio">
+                        <h3>2. Operable</h3>
+                        <p>Los componentes de la interfaz de usuario y la navegación deben ser operables. El usuario debe poder interactuar con la interfaz, asegurando que toda la funcionalidad esté disponible a través del teclado.</p>
+                        <h4>Ejemplo de Código (Botón Nativo):</h4>
+                        <pre><code>&lt;!-- Correcto: Operable con teclado y anunciado como 'botón' por defecto --&gt;
+&lt;button onclick="enviarFormulario()"&gt;Enviar&lt;/button&gt;
+</code></pre>
+                    </article>
+
+                    <article class="principio">
+                        <h3>3. Comprensible</h3>
+                        <p>La información y el funcionamiento de la interfaz de usuario deben ser comprensibles. Los usuarios deben poder entender tanto la información como el funcionamiento de la interfaz.</p>
+                        <h4>Ejemplo de Código (Etiquetas de Formulario):</h4>
+                        <pre><code>&lt;!-- La etiqueta 'label' se asocia explícitamente con su campo 'input' --&gt;
+&lt;label for="nombreUsuario"&gt;Nombre de usuario:&lt;/label&gt;
+&lt;input type="text" id="nombreUsuario" name="username"&gt;
+</code></pre>
+                    </article>
+
+                    <article class="principio">
+                        <h3>4. Robusto</h3>
+                        <p>El contenido debe ser lo suficientemente robusto como para que pueda ser interpretado de forma fiable por una amplia variedad de agentes de usuario, incluidas las tecnologías de asistencia.</p>
+                        <h4>Ejemplo de Código (HTML Bien Formado):</h4>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;title&gt;Página Robusta&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;h1&gt;Título Principal&lt;/h1&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    </article>
+                </div>
+                                <img src="/Imagenes/acesibilidad.jpg" alt="Infografía circular que resume los estándares de accesibilidad WCAG 2.0, mostrando principios como Navegación, Claridad y Compatibilidad." class="responsive-img">
+
+            </section>
+
+            <section id="ejemplo-practico-accesibilidad" class="content-panel highlight-box">
+                <h2>3. Ejemplo Práctico: Implementación de Accesibilidad en este Sitio</h2>
+                <p>Este sitio web de investigación ha sido desarrollado aplicando principios clave de accesibilidad para garantizar una experiencia inclusiva. A continuación, se detalla la implementación de tres requisitos fundamentales:</p>
+                
+                <h4>Navegación con el Teclado</h4>
+                <p>Se ha garantizado que toda la funcionalidad del sitio sea completamente operable sin necesidad de un ratón. Todos los elementos interactivos, como los enlaces del menú de navegación, son accesibles mediante la tecla <strong>Tab</strong> para enfocarlos y la tecla <strong>Enter</strong> para activarlos. Esto se logra utilizando elementos HTML nativos (<code>&lt;a&gt;</code>) que incorporan esta funcionalidad por defecto.</p>
+
+                <h4>HTML Semántico</h4>
+                <p>La estructura de cada página está construida con un fuerte enfoque en la semántica para proporcionar un contexto claro a las tecnologías de asistencia. Se utilizan etiquetas como <strong><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code></strong> y <strong><code>&lt;footer&gt;</code></strong> para definir las principales regiones de la página, permitiendo a los usuarios de lectores de pantalla comprender la estructura del documento y navegar por él de manera eficiente.</p>
+
+                <h4>WAI-ARIA (Web Accessibility Initiative – Accessible Rich Internet Applications)</h4>
+                <p>Para mejorar la semántica donde el HTML nativo no es suficiente, se han utilizado atributos de WAI-ARIA. Un ejemplo claro es el menú de navegación, donde el enlace de la página actual incluye el atributo <strong><code>aria-current="page"</code></strong>. Este atributo informa explícitamente a los usuarios de lectores de pantalla cuál es el enlace activo, proporcionando un contexto que de otro modo solo sería visible a través de estilos visuales.</p>
+            </section>
+
+            <section id="referencias-accesibilidad" class="content-panel">
+                <h2>Referencias</h2>
+                <ul>
+                    <li>
+                        <strong>World Wide Web Consortium (W3C). (2025).</strong> <em>Introducción a la Accesibilidad Web</em>. Web Accessibility Initiative (WAI). Recuperado de <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank">https://www.w3.org/WAI/fundamentals/accessibility-intro/es</a>
+                    </li>
+                    <li>
+                        <strong>Mozilla Developer Network (MDN). (2025).</strong> <em>Accesibilidad</em>. MDN Web Docs. Recuperado de <a href="https://developer.mozilla.org/es/docs/Web/Accessibility" target="_blank">https://developer.mozilla.org/es/docs/Web/Accessibility</a>
+                    </li>
+                    <li>
+                        <strong>WebAIM. (2025).</strong> <em>Introduction to Web Accessibility</em>. Recuperado de <a href="https://webaim.org/intro/" target="_blank">https://webaim.org/intro/</a>
+                    </li>
+                </ul>
+            </section>
+            </article>
+    </main>
+
+    <footer role="contentinfo" class="container">
+        <p>Curso: ISW-512 Diseño de Aplicaciones Web | Año: 2025</p>
+    </footer>
+</body>
+</html>
